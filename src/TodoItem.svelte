@@ -36,5 +36,5 @@
     <button on:click={toggleStatus}>❌ ToDo</button>
   {/if}
 
-  <button on:click={remove}>🗑 delete</button>
+  <button on:click={remove}>🗑 Delete</button>
 </li>

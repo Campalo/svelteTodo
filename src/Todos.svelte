@@ -8,14 +8,15 @@
   export let uid;
 
   // Form Text
-  let text = "Svelte tutorial";
+  let text = "";
 
-  // Query requires an index, see screenshot below
+  // Create a query to the DB on collection "todos"
   const query = db
     .collection("todos")
     .where("uid", "==", uid)
     .orderBy("created");
 
+  // Start listening on the above query
   const todos = collectionData(query, "id").pipe(startWith([]));
 
   function add() {
@@ -45,7 +46,7 @@
 
 <style>
   input {
-    display: block;
+    display: inlineblock;
   }
 </style>
 
@@ -55,6 +56,6 @@
   {/each}
 </ul>
 
-<input bind:value={text} />
+<input bind:value={text} placeholder="What's your new task?" />
 
 <button on:click={add}>Add Task</button>

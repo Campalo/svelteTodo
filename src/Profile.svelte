@@ -7,7 +7,7 @@
 <style>
   h3,
   p {
-    color: darkslategray;
+    color: rgb(174, 196, 236);
   }
 </style>
 
