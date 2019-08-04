@@ -25,16 +25,28 @@
     text-decoration: line-through;
     color: rgb(31, 190, 31);
   }
+  li {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex: 1;
+  }
+  span {
+    margin-right: 10px;
+    margin-left: 10px;
+  }
 </style>
 
 <li>
-  {#if complete}
-    <span class="is-complete">{text}</span>
-    <button on:click={toggleStatus}>✔️ Done</button>
-  {:else}
-    <span>{text}</span>
-    <button on:click={toggleStatus}>❌ ToDo</button>
-  {/if}
+  <div>
+    {#if complete}
+      <button on:click={toggleStatus}>✔️ Done</button>
+      <span class="is-complete">{text}</span>
+    {:else}
+      <button on:click={toggleStatus}>❌ ToDo</button>
+      <span>{text}</span>
+    {/if}
+  </div>
 
-  <button on:click={remove}>🗑 Delete</button>
+  <button on:click={remove}>🗑</button>
 </li>

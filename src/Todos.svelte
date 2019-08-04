@@ -48,6 +48,14 @@
   input {
     display: inlineblock;
   }
+  div {
+    display: flex;
+    flex-direction: row;
+  }
+  ul {
+    padding: 0;
+    width: 100%;
+  }
 </style>
 
 <ul>
@@ -56,6 +64,7 @@
   {/each}
 </ul>
 
-<input bind:value={text} placeholder="What's your new task?" />
-
-<button on:click={add}>Add Task</button>
+<div>
+  <input bind:value={text} placeholder="What's your new task?" />
+  <button on:click={add}>Add Task</button>
+</div>

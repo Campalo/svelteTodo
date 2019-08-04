@@ -23,13 +23,24 @@
   section {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    justify-content: center;
   }
 
   .flex-column {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    padding: 50px;
+    margin: 50px 10px 50px 10px;
+  }
+  .style-column {
+    background-color: rgb(39, 39, 39);
+    color: whitesmoke;
+    border-radius: 10px;
+  }
+  button {
+    color: rgb(39, 39, 39);
   }
 </style>
 
@@ -38,11 +49,13 @@
 
 {#if user}
   <section>
-    <div class="flex-column">
+    <article class="flex-column style-column">
       <Profile {...user} />
       <button on:click={() => auth.signOut()}>Logout</button>
-    </div>
-    <Todos class="flex-column" uid={user.uid} />
+    </article>
+    <article class="flex-column style-column">
+      <Todos uid={user.uid} />
+    </article>
   </section>
 {:else}
   <div class="flex-column">
