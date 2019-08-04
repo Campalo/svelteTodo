@@ -21,13 +21,13 @@
   }
 </style>
 
-<h1>Hello {name}!</h1>
+<h1>ToDo List made by using Svelte and RxFire</h1>
 <section>
   {#if user}
     <Profile {...user} />
     <button on:click={() => auth.signOut()}>Logout</button>
     <hr />
   {:else}
-    <button on:click={login}>Sign in with Google</button>
+    <button on:click={login}>Sign in with Google Account</button>
   {/if}
 </section>
